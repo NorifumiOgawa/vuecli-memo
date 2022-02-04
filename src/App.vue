@@ -83,7 +83,7 @@ export default {
 }
 
 body {
-  background-color: #ececec;
+  background-color: #ececec !important;
 }
 
 div {
