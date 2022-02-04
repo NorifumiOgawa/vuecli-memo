@@ -8,7 +8,9 @@
 
 <script>
 export default {
-  props: ['memo'],
+  props: {
+    memo: Object
+  },
   data(){
     return {
       editMemo: '',

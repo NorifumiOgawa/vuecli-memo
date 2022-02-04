@@ -8,7 +8,9 @@
 
 <script>
 export default {
-  props: ['memos'],
+  props: {
+    memos: Array
+  },
   methods: {
     memoSelected: function(memo) {
       this.$emit('memoSelected', memo)

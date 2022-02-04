@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
-        <List @memoSelected="memoSelected" :memos="memos"></List>
+        <MemoList @memoSelected="memoSelected" :memos="memos"></MemoList>
         <AddButton @openNewMemo="openNewMemo"></AddButton>
       </div>
       <div class="col-8">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import List from './components/List.vue'
+import MemoList from './components/MemoList.vue'
 import EditForm from './components/EditForm.vue'
 import AddButton from './components/AddButton.vue'
 
@@ -40,7 +40,7 @@ export default {
     this.memos = memoStorage.fetch()
   },
   components: {
-    List,
+    MemoList,
     EditForm,
     AddButton
   },
