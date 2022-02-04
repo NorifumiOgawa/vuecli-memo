@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h1>VueCLI Memo</h1>
     <ul>
-      <li v-for="memo in memos" :key="memo.id"><label @click="memoSelected(memo)">{{ memoTitle(memo) }}</label></li>
+      <li v-for="memo in memos" :key="memo.id"><a @click="memoSelected(memo)" href="#">{{ memoTitle(memo) }}</a></li>
     </ul>
   </div>
 </template>
@@ -23,13 +22,10 @@ export default {
 </script>
 
 <style scoped>
-div{
-    border: 1px solid blue
+div {
+  padding: 5px 0;
 }
-h1{
-    color: blue
-}
-p{
-    color:blue
+li {
+  list-style-type: none;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p><label @click="openNewMemo">+</label></p>
+    <p><a class="openNewMemo" @click="openNewMemo" href="#">＋</a></p>
   </div>
 </template>
 
@@ -15,13 +15,8 @@ export default {
 </script>
 
 <style scoped>
-div{
-    border: 1px solid green
-}
-h1{
-    color: green
-}
-p{
-    color:green
+.openNewMemo {
+  margin-left: 30px;
+  text-decoration:none;
 }
 </style>

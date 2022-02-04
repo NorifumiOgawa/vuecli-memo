@@ -1,8 +1,14 @@
 <template>
-  <div>
-    <List @memoSelected="memoSelected" :memos="memos"></List>
-    <AddButton @openNewMemo="openNewMemo"></AddButton>
-    <EditForm v-if="editing || adding" @saveMemo="saveMemo" @delMemo="delMemo" :memo="this.editingMemo"></EditForm>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <List @memoSelected="memoSelected" :memos="memos"></List>
+        <AddButton @openNewMemo="openNewMemo"></AddButton>
+      </div>
+      <div class="col-8">
+        <EditForm v-if="editing || adding" @saveMemo="saveMemo" @delMemo="delMemo" :memo="this.editingMemo"></EditForm>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -70,3 +76,17 @@ export default {
   }
 }
 </script>
+
+<style>
+.container {
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ececec;
+}
+
+div {
+  padding: 5px 0
+}
+</style>

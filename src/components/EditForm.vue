@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p><textarea v-model="memoBody" placeholder="add new memo"></textarea></p>
-    <button @click='saveMemo'>save</button>
-    <button @click='delMemo'>delete</button>
+    <p><textarea class="form-control memoBody" v-model="memoBody" placeholder="add new memo"></textarea></p>
+    <button class="btn btn-primary" @click='saveMemo'>save</button>
+    <button class="btn btn-secondary" @click='delMemo'>delete</button>
   </div>
 </template>
 
@@ -41,13 +41,11 @@ export default {
 </script>
 
 <style scoped>
-div{
-    border: 1px solid red
+button {
+  margin-right: 5px
 }
-h2{
-    color: red
-}
-p{
-    color: red
+
+.memoBody {
+  height: 300px;
 }
 </style>
