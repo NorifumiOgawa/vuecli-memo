@@ -65,11 +65,11 @@ export default {
       this.adding = false
     },
     deleteMemo(editMemo){
-      const new_memos = this.memos.filter(v => {
+      const newMemos = this.memos.filter(v => {
         if(v.id != editMemo.id) { return true}
       })
-      memoStorage.save(new_memos)
-      this.memos = new_memos
+      memoStorage.save(newMemos)
+      this.memos = newMemos
       this.editing = false
       this.adding = false
     }
