@@ -7,8 +7,8 @@
 <script>
 export default {
   methods: {
-    openNewMemo() {
-      this.$emit("openNewMemo");
+    openNewMemo () {
+      this.$emit('openNewMemo')
     }
   }
 }

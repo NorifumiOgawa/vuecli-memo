@@ -19,16 +19,16 @@ import AddButton from './components/AddButton.vue'
 
 const STORAGE_KEY = 'fjord-vuecli-memo'
 const memoStorage = {
-  fetch() {
+  fetch () {
     return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
   },
-  save(memos) {
+  save (memos) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(memos))
   }
-};
+}
 
 export default {
-  data(){
+  data () {
     return {
       memos: [],
       editingMemo: null,
@@ -36,7 +36,7 @@ export default {
       adding: false
     }
   },
-  mounted() {
+  mounted () {
     this.memos = memoStorage.fetch()
   },
   components: {
@@ -45,15 +45,15 @@ export default {
     AddButton
   },
   methods: {
-    memoSelected(memo){
+    memoSelected (memo) {
       this.editing = true
       this.editingMemo = memo
     },
-    openNewMemo() {
+    openNewMemo () {
       this.adding = true
       this.editingMemo = {}
     },
-    saveMemo(editMemo){
+    saveMemo (editMemo) {
       if (!this.editingMemo.id) {
         this.memos.push({
           id: Date.now() + Math.floor(Math.random() * 100),
@@ -64,8 +64,8 @@ export default {
       this.editing = false
       this.adding = false
     },
-    deleteMemo(editMemo){
-      const newMemos = this.memos.filter(v => v.id != editMemo.id)
+    deleteMemo (editMemo) {
+      const newMemos = this.memos.filter(v => v.id !== editMemo.id)
       memoStorage.save(newMemos)
       this.memos = newMemos
       this.editing = false

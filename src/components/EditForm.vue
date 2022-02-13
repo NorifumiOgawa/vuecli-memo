@@ -11,32 +11,32 @@ export default {
   props: {
     memo: Object
   },
-  data(){
+  data () {
     return {
       editMemo: '',
       memoBody: ''
     }
   },
-  mounted() {
+  mounted () {
     this.refreshMemo()
   },
   methods: {
-    refreshMemo() {
+    refreshMemo () {
       this.editMemo = this.memo
       this.memoBody = this.memo.body
     },
-    saveMemo(){
-      if (!this.memoBody) {return false}
+    saveMemo () {
+      if (!this.memoBody) { return false }
       this.editMemo.body = this.memoBody
       this.$emit('saveMemo', this.editMemo)
       this.memoBody = ''
     },
-    deleteMemo(){
+    deleteMemo () {
       this.$emit('deleteMemo', this.editMemo)
     }
   },
   watch: {
-    memo: function() {
+    memo () {
       this.refreshMemo()
     }
   }
