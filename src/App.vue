@@ -6,7 +6,7 @@
         <AddButton @openNewMemo="openNewMemo"></AddButton>
       </div>
       <div class="col-8">
-        <EditForm v-if="editing || adding" @saveMemo="saveMemo" @delMemo="delMemo" :memo="this.editingMemo"></EditForm>
+        <EditForm v-if="editing || adding" @saveMemo="saveMemo" @delMemo="delMemo" :memo="editingMemo"></EditForm>
       </div>
     </div>
   </div>
