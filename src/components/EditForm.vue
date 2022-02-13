@@ -26,6 +26,7 @@ export default {
       this.memoBody = this.memo.body
     },
     saveMemo(){
+      if (!this.memoBody) {return false}
       this.editMemo.body = this.memoBody
       this.$emit('saveMemo', this.editMemo)
       this.memoBody = ''
