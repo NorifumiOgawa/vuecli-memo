@@ -50,8 +50,8 @@ export default {
       this.editingMemo = memo
     },
     openNewMemo() {
-      this.editingMemo = {}
       this.adding = true
+      this.editingMemo = {}
     },
     saveMemo(editMemo){
       if (!this.editingMemo.id) {
