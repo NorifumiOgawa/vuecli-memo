@@ -12,10 +12,10 @@ export default {
     memos: Array
   },
   methods: {
-    memoSelected: function(memo) {
+    memoSelected(memo) {
       this.$emit('memoSelected', memo)
     },
-    memoTitle: function(memo) {
+    memoTitle(memo) {
       const lines = memo.body.split(/\n/)
       return lines[0]
     }

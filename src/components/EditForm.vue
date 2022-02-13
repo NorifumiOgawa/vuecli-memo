@@ -21,16 +21,16 @@ export default {
     this.refreshMemo()
   },
   methods: {
-    refreshMemo: function() {
+    refreshMemo() {
       this.editMemo = this.memo
       this.memoBody = this.memo.body
     },
-    saveMemo: function(){
+    saveMemo(){
       this.editMemo.body = this.memoBody
       this.$emit('saveMemo', this.editMemo)
       this.memoBody = ''
     },
-    deleteMemo: function(){
+    deleteMemo(){
       this.$emit('deleteMemo', this.editMemo)
     }
   },
