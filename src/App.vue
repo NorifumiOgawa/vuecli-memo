@@ -31,7 +31,7 @@ export default {
   data(){
     return {
       memos: [],
-      editingMemo: [],
+      editingMemo: null,
       editing: false,
       adding: false
     }
@@ -50,7 +50,7 @@ export default {
       this.editingMemo = memo
     },
     openNewMemo() {
-      this.editingMemo = []
+      this.editingMemo = {}
       this.adding = true
     },
     saveMemo(editMemo){
