@@ -6,7 +6,7 @@
         <AddButton @openNewMemo="openNewMemo"></AddButton>
       </div>
       <div class="col-8">
-        <EditForm v-if="editing || adding" @saveMemo="saveMemo" @delMemo="delMemo" :memo="editingMemo"></EditForm>
+        <EditForm v-if="editing || adding" @saveMemo="saveMemo" @deleteMemo="deleteMemo" :memo="editingMemo"></EditForm>
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@ export default {
       this.editing = false
       this.adding = false
     },
-    delMemo(editMemo){
+    deleteMemo(editMemo){
       const new_memos = this.memos.filter(v => {
         if(v.id != editMemo.id) { return true}
       })

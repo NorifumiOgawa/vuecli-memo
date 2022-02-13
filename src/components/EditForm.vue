@@ -2,7 +2,7 @@
   <div>
     <p><textarea class="form-control memoBody" v-model="memoBody" placeholder="add new memo"></textarea></p>
     <button class="btn btn-primary" @click='saveMemo'>save</button>
-    <button class="btn btn-secondary" @click='delMemo'>delete</button>
+    <button class="btn btn-secondary" @click='deleteMemo'>delete</button>
   </div>
 </template>
 
@@ -30,8 +30,8 @@ export default {
       this.$emit('saveMemo', this.editMemo)
       this.memoBody = ''
     },
-    delMemo: function(){
-      this.$emit('delMemo', this.editMemo)
+    deleteMemo: function(){
+      this.$emit('deleteMemo', this.editMemo)
     }
   },
   watch: {
