@@ -59,6 +59,8 @@ export default {
           id: Date.now() + Math.floor(Math.random() * 100),
           body: editMemo.body
         })
+      } else {
+        this.editingMemo.body = editMemo.body
       }
       memoStorage.save(this.memos)
       this.editing = false

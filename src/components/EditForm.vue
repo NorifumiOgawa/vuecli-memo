@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p><textarea class="form-control memoBody" v-model="memoBody" placeholder="add new memo"></textarea></p>
-    <button class="btn btn-primary" @click='saveMemo'>save</button>
+    <p><textarea class="form-control memoBody" v-model="editMemo.body" placeholder="add new memo"></textarea></p>
+    <button class="btn btn-primary" @click='emitMemo'>save</button>
     <button class="btn btn-secondary" @click='deleteMemo'>delete</button>
   </div>
 </template>
@@ -13,8 +13,7 @@ export default {
   },
   data () {
     return {
-      editMemo: '',
-      memoBody: ''
+      editMemo: ''
     }
   },
   mounted () {
@@ -22,14 +21,11 @@ export default {
   },
   methods: {
     refreshMemo () {
-      this.editMemo = this.memo
-      this.memoBody = this.memo.body
+      this.editMemo = { ...this.memo }
     },
-    saveMemo () {
-      if (!this.memoBody) { return false }
-      this.editMemo.body = this.memoBody
+    emitMemo () {
+      if (!this.editMemo.body) { return false }
       this.$emit('saveMemo', this.editMemo)
-      this.memoBody = ''
     },
     deleteMemo () {
       this.$emit('deleteMemo', this.editMemo)
